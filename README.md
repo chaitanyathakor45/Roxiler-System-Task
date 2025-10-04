@@ -108,8 +108,29 @@ npm test
 - Emails are normalized on the client (trim + lowercase) to avoid login issues.
 - For local development, `JWT_SECRET` defaults to `change-this-secret` if not set; do not use this in production.
 
-
-
-
-
 ## ScreenShots
+
+<img width="1912" height="945" alt="image" src="https://github.com/user-attachments/assets/44b7f4f6-bf44-4879-a5c6-04cd3e4215ab" />
+
+<img width="1904" height="536" alt="image" src="https://github.com/user-attachments/assets/f38bfb5f-1635-4cff-abf5-433d2516ef77" />
+<img width="1908" height="941" alt="image" src="https://github.com/user-attachments/assets/6dc04684-02dc-4416-a845-7c10c144196f" />
+<img width="1908" height="935" alt="image" src="https://github.com/user-attachments/assets/4647bf56-5d95-4583-b378-cb0b6c2f6a47" />
+<img width="1914" height="949" alt="image" src="https://github.com/user-attachments/assets/a0137445-77f2-47e9-bc53-c0a1518c8952" />
+<img width="1911" height="941" alt="image" src="https://github.com/user-attachments/assets/2a0703de-12d2-45ad-a440-96d000bca8e2" />
+
+
+<img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/b9514609-9917-41f8-acd3-12ab985b76b0" />
+<img width="1919" height="933" alt="image" src="https://github.com/user-attachments/assets/0fedadab-421b-4bbd-b111-3f4024806e00" />
+
+
+
+
+
+
+
+
+
+
+
+
+
