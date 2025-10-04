@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install root deps
+        run: npm ci
+      - name: Install api deps
+        run: cd api && npm ci
+      - name: Install web deps
+        run: cd web && npm ci
+      - name: Build web
+        run: cd web && npm run build
+      - name: Build api
+        run: cd api && npm run build
+      - name: Run backend tests
+        run: cd api && npm test

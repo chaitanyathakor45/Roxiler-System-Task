@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+  OWNER
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  passwordHash String
+  address      String
+  role         Role      @default(USER)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  stores       Store[]   @relation("UserStores")
+  ratings      Rating[]
+}
+
+model Store {
+  id          Int       @id @default(autoincrement())
+  name        String
+  email       String?
+  address     String
+  ownerUserId Int?
+  owner       User?     @relation("UserStores", fields: [ownerUserId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  ratings     Rating[]
+  @@index([name])
+  @@index([address])
+}
+
+model Rating {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  storeId   Int
+  value     Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
+  store     Store    @relation(fields: [storeId], references: [id])
+  @@unique([userId, storeId], name: "user_store_unique")
+}
+

@@ -1,0 +1,52 @@
+:root{
+  --bg:#0f1113;
+  --card:#161719;
+  --muted:#9aa0a6;
+  --accent:#2563eb;
+  --success:#16a34a;
+  --danger:#ef4444;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg,var(--bg),#0b0c0d);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+}
+header.site-nav{background:transparent;padding:18px 28px}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+.card{background:var(--card);border-radius:12px;padding:18px;color:#fff;box-shadow:0 4px 18px rgba(0,0,0,0.6)}
+h1,h2,h3{margin:0 0 12px}
+nav a{color:var(--accent);text-decoration:none;margin-right:12px}
+.kpi{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:140px;height:100px;background:linear-gradient(180deg,#141516,#1a1b1d);border-radius:12px;margin-right:12px}
+.kpi .num{font-size:28px;font-weight:700}
+.form{max-width:480px;margin:18px auto}
+.field{margin-bottom:12px;display:flex;flex-direction:column}
+.field label{font-size:14px;color:var(--muted);margin-bottom:6px}
+.field input, .field select, .field textarea{background:#0b0c0d;border:1px solid #222;color:#fff;padding:10px;border-radius:8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+.btn.secondary{background:transparent;border:1px solid #2b2c2e;color:var(--muted)}
+.muted{color:var(--muted)}
+.stars{display:inline-flex;gap:6px}
+.star{font-size:20px;cursor:pointer;color:#6b7280}
+.star.active{color:#ffd166}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px;border-bottom:1px solid #151617;text-align:left}
+.toast{padding:10px 14px;border-radius:8px;background:#17202a;color:#fff}
+
+/* Small animations */
+.fade-in{animation:fadeIn .45s ease both}
+.fade-up{animation:fadeUp .45s ease both}
+.hover-elevate{transition:transform .22s ease, box-shadow .22s ease}
+.hover-elevate:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Bootstrap card tweaks to match theme */
+.card .card-body{background:transparent}
+.b-card{background:linear-gradient(180deg,#111214,#18191b);border:none;color:#e6eef8}
+.list-hover tbody tr:hover{background:rgba(255,255,255,0.02)}
+
